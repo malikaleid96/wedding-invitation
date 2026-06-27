@@ -4,7 +4,21 @@
     <meta charset="UTF-8">
     <title>دعوة زفاف</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background-color: #f9f9f9; }
+        body   margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            /* تم ربط الصورة هنا باسمها الجديد */
+            background-image: url('img0.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .card { border: 1px solid #ddd; padding: 30px; border-radius: 15px; background: white; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
     </style>
 </head>
@@ -33,7 +47,7 @@
         if (id && guests[id]) {
             welcomeText.innerText = "أهلاً بك يا " + guests[id];
         } else {
-            welcomeText.innerText = "أهلاً بك في حفل زفافنا";
+            welcomeText.innerText = "أهلاً بك في حفلة زفاف مالك + اسماء";
         }
     </script>
 </body>
