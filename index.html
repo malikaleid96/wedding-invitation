@@ -5,20 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دعوة زفاف</title>
     <style>
-        /* إعدادات الخلفية */
+        /* إعدادات كامل الصفحة */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            text-align: center;
-            /* ربط صورة الخلفية التي رفعتها في المستودع */
-            background-image: url('img0.jpeg'); 
+            background-image: url('img0.jpeg'); /* تأكد من اسم ملف الصورة */
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
+        /* صندوق المعلومات (المرئي) */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 400px;
+            border: 2px solid #d4af37; /* إطار ذهبي جمالي */
+        }
+
+        h1 { color: #2c3e50; margin-bottom: 15px; }
+        p { font-size: 1.2rem; color: #34495e; margin: 10px 0; }
+        .details { font-weight: bold; color: #b8860b; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 id="welcomeText">مرحباً بك</h1>
+        <p>يسعدنا تشريفكم لنا في حفل زفافنا</p>
+        <p class="details">صالة الهاشمية</p>
+        <p class="details">الساعة: 9:00 مساءً</p>
+    </div>
+
+    <script>
+        const guests = {
+            "G001": "أحمد",
+            "G002": "love assy",
+            "G003": "عامر",
+            "G004": "ياسر",
+            "G005": "خليل",
+            "G006": "محمد"
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const welcomeText = document.getElementById('welcomeText');
+
+        if (id && guests[id]) {
+            welcomeText.innerText = "أهلاً بك يا " + guests[id];
+        }
+    </script>
+</body>
+</html>
