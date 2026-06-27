@@ -2,13 +2,16 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دعوة زفاف</title>
     <style>
-        body   margin: 0;
+        /* إعدادات الخلفية */
+        body {
+            margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            /* تم ربط الصورة هنا باسمها الجديد */
+            /* ربط صورة الخلفية التي رفعتها في المستودع */
             background-image: url('img0.png'); 
             background-size: cover;
             background-position: center;
@@ -19,36 +22,3 @@
             justify-content: center;
             align-items: center;
         }
-        .card { border: 1px solid #ddd; padding: 30px; border-radius: 15px; background: white; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1 id="welcomeText">جاري التحميل...</h1>
-        <p>نحن بانتظار تشريفكم في صالة الهاشمية</p>
-        <p>الساعة: 9:00 مساءً</p>
-    </div>
-
-    <script>
-        // قائمة الضيوف (يمكنك التعديل عليها هنا)
-        const guests = {
-            "G001": "أحمد",
-            "G002": "خالد + عمر",
-            "G003": "عامر",
-            "G004": "بحبك يا اسماء",
-            "G005": "خليل",
-            "G006": "محمد"
-        };
-
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
-        const welcomeText = document.getElementById('welcomeText');
-
-        if (id && guests[id]) {
-            welcomeText.innerText = "أهلاً بك يا " + guests[id];
-        } else {
-            welcomeText.innerText = "أهلاً بك في حفلة زفاف مالك + اسماء";
-        }
-    </script>
-</body>
-</html>
